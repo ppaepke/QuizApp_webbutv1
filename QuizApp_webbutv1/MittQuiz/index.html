@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Mitt Quiz Projekt</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+<h1>Quiz-applikation</h1>
+
+<!-- START-VY -->
+<div id="start-screen">
+    <h3>Välj ett av dessa quiz:</h3>
+    <div id="quiz-list">
+        <!-- JS lägger in knappar här -->
+    </div>
+    <br>
+    <button onclick="toggleCreateScreen()">Skapa eget quiz</button>
+</div>
+
+<!-- SKAPA-VY -->
+<div id="create-quiz-screen" class="hide">
+    <h3>Skapa nytt</h3>
+    Namn: <input type="text" id="new-quiz-title">
+    <hr>
+    <div id="questions-to-add">
+        <div class="question-block">
+            Fråga: <input type="text" class="q-text"><br>
+            Svar 1: <input type="text" class="opt"><br>
+            Svar 2: <input type="text" class="opt"><br>
+            Svar 3: <input type="text" class="opt"><br>
+            Svar 4: <input type="text" class="opt"><br>
+            Rätt svar (1-4): <input type="number" class="correct-num" value="1">
+        </div>
+    </div>
+    <br>
+    <button onclick="addQuestionField()">Lägg till fråga</button>
+    <button onclick="saveNewQuiz()">Spara allt</button>
+    <button onclick="toggleCreateScreen()">Ångra</button>
+</div>
+
+<!-- SPEL-VY -->
+<div id="quiz-screen" class="hide">
+    <h2 id="question-text">Frågan laddas...</h2>
+    <div id="answer-buttons">
+        <!-- Knappar kommer här -->
+    </div>
+    <p>Fråga <span id="current-question-num">0</span> av <span id="total-questions">0</span></p>
+</div>
+
+<!-- RESULTAT-VY -->
+<div id="result-screen" class="hide">
+    <h2>Ditt resultat:</h2>
+    <p id="score-text"></p>
+    <button onclick="location.reload()">Tillbaka till start</button>
+</div>
+
+</div> <!-- Slut på container -->
+
+<script src="script.js"></script>
+</body>
+</html>
